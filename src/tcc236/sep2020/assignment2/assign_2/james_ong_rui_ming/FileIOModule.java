@@ -1,15 +1,27 @@
-package file_io;
+package tcc236.sep2020.assignment2.assign_2.james_ong_rui_ming;
+
+/**
+* Course Code : TCC236/05
+* Course Title : Data Structures and Algorithms
+* Student ID : 141190169, 141190132, 141190001
+* Author : James Ong Rui Ming, Goh Loh Meng Sheng, Liew Jun Ping
+* Date : TBD
+* Honor Code : We pledge that this is our own program code.
+* We received assistance from each other (group members) in understanding and debugging our program.
+*/
 
 import java.io.*;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class FileIOModule implements FileIOInterface {
 	File f;
-	
-	@Override
+
+	/**
+	 * This function reads the CSV file provided
+	 * @param file_path - File path for file to be read
+	 * @return Returns an ArrayList for Double values
+	 */
 	public ArrayList<Double> readFile(String file_path) {
-		int lines = 0;
 		ArrayList<Double> values = new ArrayList<Double>();
 		String new_line;
 		Double new_value;
@@ -19,7 +31,6 @@ public class FileIOModule implements FileIOInterface {
 			while((new_line = reader.readLine()) != null) {
 				new_value = Double.parseDouble(new_line);
 				values.add(new_value);
-				lines++;
 			}
 			reader.close();
 		} catch (NumberFormatException | IOException e) {
@@ -28,7 +39,10 @@ public class FileIOModule implements FileIOInterface {
 		return values;
 	}
 
-	@Override
+	/**
+	 * @param
+	 * @param
+	 */
 	public void writeFile(ArrayList<Double> data, String file_directory) throws IOException {
 		File file_joiner;
 		String file_name = f.getName();
@@ -50,6 +64,10 @@ public class FileIOModule implements FileIOInterface {
 		writer.close();
 	}
 	
+	/**
+	 * @param file_path
+	 * @return Returns Boolean value on whether file exists or not
+	 */
 	public boolean checkFileExists(String file_path) {
 		f = new File(file_path);
 		return f.exists() && !f.isDirectory();
