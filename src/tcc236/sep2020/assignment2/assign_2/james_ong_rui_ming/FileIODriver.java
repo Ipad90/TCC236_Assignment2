@@ -24,8 +24,10 @@ public class FileIODriver {
 			
 			String file_path = file_locator.nextLine();		
 			
+			//To check whether the file directory is correct 
 			file_validator = (file_module.checkFileExists(file_path));
 			
+			//If file directory exist then read file
 			if (file_validator) {
 				file_locator.close();
 				System.out.println("Valid CSV file.");
