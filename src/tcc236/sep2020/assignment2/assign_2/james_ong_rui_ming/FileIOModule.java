@@ -40,8 +40,8 @@ public class FileIOModule implements FileIOInterface {
 	}
 
 	/**
-	 * @param
-	 * @param
+	 * @param data - the array list with data
+	 * @param file_directory - file directory of the data 
 	 */
 	public void writeFile(ArrayList<Double> data, String file_directory) throws IOException {
 		File file_joiner;
