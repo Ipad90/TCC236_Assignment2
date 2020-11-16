@@ -16,13 +16,16 @@ public class SortingDriver {
 	public static void main(String [] args) {
 		ArrayList<Double> data = new ArrayList<Double>();
 		
+		//Add data into the array list
 		for (int i = 0; i < 10; i++) {
 			data.add((double) i);
 		}
 		
+		//begin sorting data
 		SortingModule sort = new SortingModule(data);
 		sort.sort();
 		
+		//print out sorted data
 		for (int i = 0; i < 10; i++) {
 			System.out.println(data.get(i)); 			
 		}
